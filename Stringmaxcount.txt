@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+
+ class Stringmaxcount
+    {
+    public static void Main(string[] args) {
+        string name = "ccaabcabcec";
+        int max = 0;
+        char maxchar=' ';
+        Dictionary<char,int> dic = new Dictionary<char,int>();
+        for (int i = 0; i < name.Length; i++) {
+            if (dic.ContainsKey(name[i])) {
+               dic[name[i]]++;
+            }
+            else
+            {
+                dic.Add(name[i], 1);
+            }
+        }
+        foreach (var item in dic)
+        {
+            if (item.Value > max) { 
+                 max=item.Value;
+                maxchar=item.Key;
+            }
+        }
+        Console.WriteLine("max count character is:" + maxchar);
+        Console.WriteLine("max count:" + max);
+        
+
+    }
+    }
+
