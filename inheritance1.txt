@@ -1,0 +1,47 @@
+using System;
+// class User{
+//     public static string username="admin@gmail.com";
+//     public static string password="admin123";
+   
+//     public static void Register(int x,int y){
+//         int sum=x+y;
+       
+//         Console.WriteLine("You required first register to our website:"+sum);
+//     }
+    
+// }
+// class Login:User{
+   
+//     public void Register(){
+//         Console.WriteLine("If you completed registration you will get credential on email");
+//     }
+// }
+class HelloWorld {
+    public int num1;
+    public int num2;
+    
+    // public  void Register(int num1,int num2){
+    //   this.num1=num1;
+    //   this.num2=num2;
+    //   int sum =num1+num2;
+    //   Console.WriteLine("Sum of two number is:"+sum);
+    // }
+  public static void Main(string [] args) {
+      HelloWorld h1=new HelloWorld();
+      int a;
+      int b;
+      Console.WriteLine(a);
+      Console.WriteLine(b);
+      Console.WriteLine(h1.num1);
+      Console.WriteLine(h1.num2);
+      
+      
+    //  h1.Register(10,20);
+    //  h1.Register(30,40);
+    //  int sum=h1.num1+h1.num2;
+    //  Console.WriteLine("The number is:-"+h1.num1);
+    //  Console.WriteLine("The sum value is:-"+h1.num2);
+    //  Console.WriteLine("The number is:-"+sum);
+   
+  }
+}
