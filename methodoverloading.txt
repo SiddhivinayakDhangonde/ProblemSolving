@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+    
+    public static int isPrime(int number){
+      return 4+number;
+    }
+     public static int isPrime(double number){
+      return 5+(int)number;
+    }
+     public static int isPrime(float number){
+      return 5+(int)number;
+    }
+  public static void Main(string [] args) {
+      int number=2;
+      double a=2.50;
+     float b = 34.60f;
+      
+      int x=isPrime(number);
+       int y=isPrime(a);
+       int z=isPrime(b);
+      Console.WriteLine("Value of:"+x);
+      Console.WriteLine("The sum of first n prime number:"+y);
+      Console.WriteLine("Value of:"+z);
+    
+  }
+}

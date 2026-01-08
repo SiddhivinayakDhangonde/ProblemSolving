@@ -1,0 +1,42 @@
+// Graph Undirecte graph code
+
+
+using System;
+using System.Collections.Generic;
+ class Vertices{
+     
+     public int num;
+     public List<int>[] adj;
+     public Vertices(int vertices){
+         num=vertices;
+         adj=new List<int>[num];
+         for(int i=0;i<num;i++){
+         adj[i]=new List<int>();
+         }
+     }
+     public void AddEdge(int u,int v){
+         adj[u].Add(v);
+         adj[v].Add(u);
+     }
+     public void PrintEdges(){
+         for(int i=0;i<num;i++){
+             Console.Write(i+"->");
+             foreach(var item in adj[i]){
+                 Console.Write(item +" ");
+             }
+             Console.WriteLine();
+         }
+     }
+ }
+
+class Graph {
+  static void Main() {
+     Vertices v1=new Vertices(5);
+     v1.AddEdge(0,1);
+     v1.AddEdge(1,2);
+     v1.AddEdge(1,3);
+     v1.AddEdge(2,3);
+     v1.AddEdge(2,4);
+     v1.PrintEdges();
+  }
+}
