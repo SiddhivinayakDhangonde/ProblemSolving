@@ -1,0 +1,36 @@
+Problem: Input String a=a3b4c2a1b2
+        Output=a5b6c2;
+
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+  static void Main() {
+   
+       Console.Write("Enter the String:");
+       string value=Console.ReadLine();
+       string ans="";
+       Dictionary<char,int> dic=new Dictionary<char,int>();
+       List<char> Li=new List<char>();
+       for(int i=0;i<value.Length;i+=2){
+           int count=value[i+1]-'0';
+           char ch=value[i];
+           if(dic.ContainsKey(ch)){
+             dic[value[i]]+=count;
+           }
+           else{
+           dic.Add(ch,count);
+           }
+       }
+       foreach(var item in dic){
+          Li.Add(item.Key);
+          Li.Add((char)(item.Value+'0'));
+           
+       }
+       char [] n=Li.ToArray();
+       for(int i=0;i<n.Length;i++){
+           ans=ans+n[i];
+       }
+       Console.WriteLine(ans);
+       
+  }
+}
