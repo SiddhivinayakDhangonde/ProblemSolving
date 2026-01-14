@@ -1,0 +1,26 @@
+using System;
+class HelloWorld {
+  static void Main(string [] args) {
+      
+       string name= new string("madam");
+       char [] arr= name.ToCharArray();
+       int i=0;
+       int n=arr.Length;
+       int j=n-1;
+       while(i<j){
+           char temp=arr[i];
+       arr[i]=arr[j];
+       arr[j]=temp;
+          i++;
+          j--;
+       }
+       string reverse= new string(arr);
+       if(name.Equals(reverse)){
+       Console.WriteLine("The given string is the palindrom");
+       }
+       else
+       {
+           Console.WriteLine("The given string is not palindrom");
+       }
+  }
+}
