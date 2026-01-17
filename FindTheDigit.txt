@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+class HelloWorld {
+    static string CheckDigit(string str,char num){
+        List<int> ls=new List<int>();
+        int len=str.Length;
+        for(int i=0;i<len;i++){
+            
+                if(str[i]==num){
+                    StringBuilder sb=new StringBuilder(str);
+                    sb.Remove(i,1);
+                    ls.Add(Convert.ToInt32(sb.ToString()));
+                }
+            
+        }
+        ls.Sort();
+        int max=ls.Count;
+       
+        return ls[max-1].ToString();
+    }
+  static void Main() {
+    Console.WriteLine("Enter the Number:");
+    string number=Console.ReadLine();
+    Console.WriteLine("Enter the Digit:");
+    char digit=Console.ReadLine()[0];
+    string ans=CheckDigit(number,digit);
+    Console.WriteLine("After removing the digit in the string max number in the string:"+ans);
+  }
+}
