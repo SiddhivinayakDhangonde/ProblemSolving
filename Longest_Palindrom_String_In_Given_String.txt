@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+  static void Main() {
+    
+     string longpalstring="";
+     int max=0;
+     List<string> li=new List<string>();
+     List<string> palindrom=new List<string>();
+     int n=s.Length;
+     for(int i=0;i<n;i++){
+         string sub="";
+         for(int j=i;j<n;j++){
+             sub=sub+s[j];
+             li.Add(sub);
+         }
+     }
+     foreach(string item in li){
+         if(ispalindrom(item)){
+             palindrom.Add(item);
+         }
+     }
+     foreach(string items in palindrom){
+         int a=items.Length;
+         if(a>max){
+             max=a;
+             longpalstring=items;
+         }
+     }
+     Console.WriteLine("Longest palindrom string in the given string:"+longpalstring);
+     
+  }
+    public static bool ispalindrom(string substr){
+        string copy=substr;
+        char [] subarr=substr.ToCharArray();
+        Array.Reverse(subarr);
+        string copy1=new string(subarr);
+        if(copy==copy1){
+            return true;
+        }
+        return false;
+    }
+}
