@@ -1,0 +1,18 @@
+public class Solution {
+    public int Reverse(int x) {
+        int sign = x<0? -1:1;
+        x=Math.Abs(x);
+        int reverse=0;
+        while(x>0){
+            int num=x%10;
+            reverse=reverse*10+num;
+            x=x/10;
+        }
+        reverse=reverse*sign;
+        if(reverse>int.MaxValue || reverse<int.MinValue){
+            return 0;
+        }
+        return reverse;
+        
+    }
+}
