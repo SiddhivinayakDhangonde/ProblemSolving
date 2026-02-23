@@ -1,0 +1,45 @@
+Example 1:
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+Solution :
+Brute force Approach
+public class Solution {
+    public List<string> Anagram(string [] ele,string [] arr){
+        List<string> li =new List<string>();
+        int n=ele.Length;
+        for(int i=0;i<n;i++){
+            string a=ele[i];
+            for(int j=0;j<arr.Length;j++){
+                char [] y=arr[j].ToCharArray();
+            char [] z=ele[i].ToCharArray();
+            Array.Sort(y);
+            Array.Sort(z);
+            if(new string(y)==new string(z)){
+                li.Add(arr[j]);
+            }
+            }
+            
+        }
+        return li;
+    }
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+        List<IList<string>> result=new List<IList<string>>();
+        List<string> s=new List<string>();
+        for(int i=0;i<strs.Length;i++){
+           char[] ar=strs[i].ToCharArray();
+           Array.Sort(ar);
+           string st=new string(ar);
+           if(!s.Contains(st)){
+               s.Add(st);
+           }
+        }
+      
+        
+      for (int i = 0; i < s.Count; i++) {
+            result.Add(Anagram(new string[] { s[i] }, strs));
+        }
+        return result;
+    }
+}

@@ -1,0 +1,32 @@
+Multiply String Problem
+Example 1:
+
+Input: num1 = "2", num2 = "3"
+Output: "6"
+public class Solution {
+    public string Multiply(string num1, string num2) {
+       int n=num1.Length;
+       int m=num2.Length;
+       int [] ans=new int[n+m];
+       if(num1=="0" || num2=="0"){
+        return "0";
+       }
+       for(int i=n-1;i>=0;i--){
+        for(int j=m-1;j>=0;j--){
+                int mul=(num1[i]-'0')*(num2[j]-'0');
+                int sum=mul+ans[i+j+1];
+                 ans[i+j+1]=sum%10;
+                 ans[i+j]+=sum/10;
+
+        }
+       }
+       StringBuilder sb=new StringBuilder();
+       foreach(int num in ans){
+        if(!(sb.Length==0 && num==0)){
+             sb.Append(num);
+        }
+        
+       }
+       return sb.ToString();
+    }
+}

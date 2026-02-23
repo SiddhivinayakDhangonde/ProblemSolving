@@ -1,0 +1,191 @@
+Q1.
+using System;
+class HelloWorld {
+    public static string ArrayEquality(int []arr,int []abc){
+     int i=0;
+     int j=0;
+     if(abc.Length==arr.Length){
+        while(i<(abc.Length)){
+            if(abc[i]==arr[j]){
+                i++;
+                j++;
+            }
+        
+        }
+     }
+     else{
+         return "The two arrays are equal";
+     }
+        return "The given array are equal";
+    }
+  static void Main() {
+     int [] a={1,2,3,4,5};
+     int [] b={1,2,3,4,5};
+     string ans=ArrayEquality(a,b);
+     Console.WriteLine(ans);
+  }
+}
+Q2
+using System;
+
+class Program {
+    static void Main() {
+        int num = 789;
+        int originalNum = num;
+        int reversed = 0;
+
+        while (num > 0) {
+            int digit = num % 10;      
+            reversed = reversed * 10 + digit; 
+            num = num / 10;           
+        }
+
+        if (originalNum == reversed) {
+            Console.WriteLine(originalNum + " is a palindrome.");
+        } else {
+            Console.WriteLine(originalNum + " is not a palindrome.");
+        }
+    }
+}
+
+Q3
+Ans:using System;
+class HelloWorld {
+    public static int ArraySum(int []arr){
+        int sum=0;
+        for(int i=0;i<arr.Length;i++){
+            sum=sum+arr[i];
+        }
+        return sum;
+    }
+     public static int ArrayAverage(int []arr){
+        int sum=0;
+        for(int i=0;i<arr.Length;i++){
+            sum=sum+arr[i];
+        }
+        return sum/arr.Length;
+    }
+  static void Main() {
+     int [] a={1,2,3,4,5};
+     int ans=ArraySum(a);
+     int avg=ArrayAverage(a);
+     Console.WriteLine("Average of given array:"+avg);
+     Console.WriteLine("Sum of the given array:"+ans);
+  }
+}
+Q4
+using System;
+
+class HelloWorld {
+    static void Main() {
+        string name = "I love India";
+        string[] arr = name.Split(" "); 
+        string a = arr[1];
+
+        int[] z = new int[a.Length]; 
+
+        for (int i = 0; i < a.Length; i++) {
+            z[i] = (int)a[i]; 
+        }
+
+        
+        string ans = string.Join(", ", z);
+        Console.WriteLine("ASCII values of \"" + a + "\": " + ans);
+    }
+}
+
+Q5.
+Ans using System;
+class HelloWorld {
+    public static bool IsPrime(int num){
+       if(num<=1){
+           return false;
+       }
+      int n=num/2;
+      for(int i=2;i<num;i++){
+          if(num%i==0){
+              return false;
+          }
+      }
+      return true;
+    }
+    
+  static void Main() {
+     int num=Convert.ToInt32(Console.ReadLine());
+     bool a=IsPrime(num);
+     if(a){
+          Console.WriteLine("The given number is prime number");
+     }
+     else{
+         Console.WriteLine("The given number is not prime number");
+     }
+  }
+}
+Q6
+1.using System;
+class HelloWorld {
+    
+  static void Main() {
+      for(int i=1;i<=5;i++){
+          for(int j=i;j>0;j--){
+          Console.Write(j+" ");
+      }
+      Console.WriteLine();
+      }
+  }
+}
+2.
+using System;
+
+class HelloWorld {
+    static void Main() {
+        int rows = 3; 
+
+        
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                Console.Write("* ");
+            }
+            Console.WriteLine();
+        }
+
+        
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                Console.Write("* ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+ 2.
+using System;
+
+class HelloWorld {
+    static void Main() {
+        int rows = 5; 
+        int mid = (rows + 1) / 2; 
+
+        for (int i = 1; i <= rows; i++) {
+            int starsInRow = i <= mid ? i : rows - i + 1;
+            int spaces = mid - starsInRow; 
+
+        
+            for (int s = 0; s < spaces; s++) {
+                Console.Write(" ");
+            }
+
+      
+            for (int j = 1; j <= starsInRow; j++) {
+                if ((i + j) % 2 == 0)
+                    Console.Write("@");
+                else
+                    Console.Write("0");
+
+                if (j != starsInRow) Console.Write(" "); 
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
