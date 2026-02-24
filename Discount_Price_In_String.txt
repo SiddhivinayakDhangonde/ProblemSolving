@@ -1,0 +1,28 @@
+Input: sentence = "there are $1 $2 and 5$ candies in the shop", discount = 50
+Output: "there are $0.50 $1.00 and 5$ candies in the shop"
+using System;
+class HelloWorld {
+    public static string DiscountPrice(string sen,int num){
+        string [] str=sen.Split(' ');
+        for(int i=0;i<str.Length;i++){
+            if(str[i].Length>1 && str[i][0]=='$'){
+                string value=str[i].Substring(1);
+                if(long.TryParse(value,out long v)){
+                    double discountprice=v*(100-num)/100.0;
+                    str[i]="$"+discountprice.ToString("F2");
+                }
+                   
+                }
+            }
+            
+            string x=string.Join(" ",str);
+            return x;
+        }
+    
+  static void Main() {
+        string  sentence = "there are $1 $2 and 5$ candies in the shop";
+        int discount=50;
+        string ans=DiscountPrice(sentence,discount);
+        Console.WriteLine(ans);
+  }
+}
