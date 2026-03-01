@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+    static List<int> MaxNumSubArr(int [] nums,int len){
+        List<int> li=new List<int>();
+        int n=nums.Length;
+        for(int i=0;i<=n-len;i++){
+            int max=nums[i];
+            int j=i;
+            while(j<i+len){
+               
+                if(nums[j]>max){
+                    max=nums[j];
+                }
+                j++;
+            
+            }
+            li.Add(max);
+        }
+        return li;
+    }
+  static void Main() {
+      int [] arr={4,7,9,3,5,10,6};
+      int k=3;
+      List<int> li=MaxNumSubArr(arr,k);
+      Console.Write("[");
+      foreach(int a in li){
+          Console.Write(a+" ");
+          Console.Write(",");
+      }
+      Console.Write("]");
+  }
+}
