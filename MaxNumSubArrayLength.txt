@@ -31,3 +31,35 @@ class HelloWorld {
       Console.Write("]");
   }
 }
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+    static List<int> MaxNumSubArr(int [] nums,int k){
+        List<int> li=new List<int>();
+        LinkedList<int> dequeue=new LinkedList<int>();
+        for(int i=0;i<nums.Length;i++){
+            if(dequeue.Count>0 && dequeue.First.Value<=i-k){
+                dequeue.RemoveFirst();
+            }
+            while(dequeue.Count>0 && nums[dequeue.Last.Value]<nums[i]){
+                dequeue.RemoveLast();
+            }
+            dequeue.AddLast(i);
+            if(i>=k-1){
+                li.Add(nums[dequeue.First.Value]);
+            }
+        }
+        return li;
+    }
+  static void Main() {
+      int [] arr={4,7,9,3,5,10,6};
+      int k=3;
+      List<int> li=MaxNumSubArr(arr,k);
+      Console.Write("[");
+      foreach(int a in li){
+          Console.Write(a+" ");
+          Console.Write(",");
+      }
+      Console.Write("]");
+  }
+}
