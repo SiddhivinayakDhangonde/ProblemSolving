@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+    public static void getpermutations(char [] arr,int indx ,List<string> answer ){
+        
+       if(indx==arr.Length){
+                answer.Add(new string(arr));
+                return;
+            }
+        for(int i=indx;i<arr.Length;i++){
+          
+            swap(arr,i,indx);
+            getpermutations(arr,indx+1,answer);
+            swap(arr,i,indx);
+        }
+    }
+    public static  void swap(char [] arr,int a,int b){
+        char x=arr[a];
+        arr[a]=arr[b];
+        arr[b]=x;
+    }
+    public static List<string> permutations(string str){
+        List<string> ans=new List<string>();
+        char[] arr=str.ToCharArray();
+        getpermutations(arr,0,ans);
+        return ans;
+    }
+   static void Main() {
+    string str=Console.ReadLine();
+      List<string> li=permutations(str);
+      Console.Write("[");
+      foreach(string z in li){
+          Console.Write(z+" ");
+      }
+      Console.Write("]");
+  }
+}
