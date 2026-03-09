@@ -1,0 +1,32 @@
+Example 1:
+
+Input: s = "()"
+
+Output: true
+
+Example 2:
+
+Input: s = "()[]{}"
+
+Output: true
+public class Solution {
+    public bool IsValid(string s) {
+          
+      Stack<char> st =new Stack<char>();
+       foreach(char a in s){
+           if(a=='[' || a=='{' || a=='('){
+            st.Push(a);
+           }
+           else{
+               if(st.Count==0) return false;
+               if(st.Peek()=='{' && a=='}' || st.Peek()=='[' && a==']' || st.Peek()=='(' && a==')'){
+                  st.Pop();
+               }
+               else{
+                    return false;
+               }
+           }
+       }
+       return st.Count==0;
+    }
+}
