@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+class Paranthysis{
+    public static void Main(){
+        Stack<string> st=new Stack<string>();
+        Stack<char> x=new Stack<char>();
+        string reverse="";
+        Console.WriteLine("Enter the reverse sentence:");
+        string str=Console.ReadLine();
+        string [] arr=str.Split(' ');
+        foreach(string a in arr){
+           char [] ch=a.ToCharArray();
+           string rev="";
+           foreach(char c in ch){
+               x.Push(c);
+           }
+           
+           while(x.Count>0){
+               rev=rev+x.Pop();
+           }
+           st.Push(rev);
+        }
+        while(st.Count>0){
+        reverse=reverse+st.Pop()+" ";
+        }
+        Console.WriteLine(reverse);
+    }
+}
