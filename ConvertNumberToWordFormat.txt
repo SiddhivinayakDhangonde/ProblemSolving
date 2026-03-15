@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+class HelloWorld {
+    static string [] ones={"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Ninneteen"};
+    static string [] tens={"","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Ninety"};    
+    static string Convert(int nums){
+        if(nums<20){
+            return ones[nums];
+        }
+        else if(nums<100){
+            return tens[nums/10]+" "+ones[nums%10];
+        }
+        else if(nums<1000){
+            return ones[nums/100]+" Hundred "+Convert(nums%100);
+        }
+        else if(nums<10000){
+           return  ones[nums/1000]+" Thousand "+Convert(nums%1000);
+        }
+        return " ";
+    }
+  static void Main() {
+    Console.WriteLine("Enter the number");
+    
+    int num=int.Parse(Console.ReadLine());
+     
+        string word=Convert(num);
+        Console.WriteLine(word);
+  }
+}
